@@ -32,6 +32,7 @@ mkdir bin build
 ```
 this should generate the required bin for output binaries and build for your build system/IDE  
 Then, place the SDL2.dll (or SDL2.so) in the bin directory.  
+Be sure this is the one from the SDL2_DIR/lib/x86/  
 THIS IS VERY IMPORTANT OR IT WILL FAIL TO RUN.  
 ALSO be sure that same file is no longer inside SDL2_DIR/lib.  
 Then
