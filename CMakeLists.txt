@@ -7,18 +7,18 @@ project( ${PROJECT_NAME_STR} C CXX)
 find_package(Threads REQUIRED)
 
 
-#
-# Get Bytedness
-#
-if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
-    MESSAGE( "64 bits compiler detected" )
-    SET( EX_PLATFORM 64 )
-    SET( EX_PLATFORM_NAME "x64" )
-else( CMAKE_SIZEOF_VOID_P EQUAL 8 ) 
-    MESSAGE( "32 bits compiler detected" )
-    SET( EX_PLATFORM 32 )
-    SET( EX_PLATFORM_NAME "x86" )
-endif( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+##
+## Get Bytedness
+##
+#if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+#    MESSAGE( "64 bits compiler detected" )
+#    SET( EX_PLATFORM 64 )
+#    SET( EX_PLATFORM_NAME "x64" )
+#else( CMAKE_SIZEOF_VOID_P EQUAL 8 ) 
+#    MESSAGE( "32 bits compiler detected" )
+#    SET( EX_PLATFORM 32 )
+#    SET( EX_PLATFORM_NAME "x86" )
+#endif( CMAKE_SIZEOF_VOID_P EQUAL 8 )
 
 
 #
@@ -57,8 +57,8 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 #
 
 set(SDL2_DIR ${EXT_PROJECTS_DIR}/sdl2.0.5 )
-set(SDL2_INCLUDE_DIR ${SDL_DIR}/${EX_PLATFORM_NAME}/include)
-set(SDL2_LIB_DIR ${SDL_DIR}/${EX_PLATFORM_NAME}/lib)
+set(SDL2_INCLUDE_DIR ${SDL_DIR}/include )
+set(SDL2_LIB_DIR ${SDL_DIR}/lib/x86 )
 
 file( GLOB SDL2_LIBS ${SDL2_LIB_DIR}/*)
 
