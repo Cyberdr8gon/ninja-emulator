@@ -14,4 +14,7 @@ int main(int argc, char* argv[]) {
 
   char* rom_data = fileLoader(argv[1]);
 
+
+  // processor
+
 }
