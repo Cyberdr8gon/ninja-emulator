@@ -70,7 +70,7 @@ file( GLOB SDL2_LIBS ${SDL2_LIB_DIR}/*)
 include_directories( ${COMMON_INCLUDES} ${SDL2_INCLUDE_DIR} )
 file( GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp )
 add_executable( ${PROJECT_NAME_STR} ${SRC_FILES} )
-target_link_libraries( ${PROJECT_NAME_STR} SDL2_LIBS )
+target_link_libraries( ${PROJECT_NAME_STR} ${SDL2_LIBS} )
 
 
 #
@@ -95,12 +95,13 @@ enable_testing()
 set( PROJECT_TEST_NAME ${PROJECT_NAME_STR}_test )
 include_directories( ${GTEST_INCLUDE_DIRS} ${COMMON_INCLUDES} ${SDL2_INCLUDE_DIR} )
 
-file( GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/tests/*.cpp )
+file( GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp )
 list( APPEND TEST_SRC_FILES ${SRC_FILES} )
 list( REMOVE_ITEM TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/src/main.cpp )
 
 add_executable( ${PROJECT_TEST_NAME} ${TEST_SRC_FILES} )
 add_dependencies( ${PROJECT_TEST_NAME} googletest )
+
 
 
 if(NOT WIN32 OR MINGW)
