@@ -1,0 +1,8 @@
+build/
+ext/
+
+*.swp
+*.un~
+*~
+
+!ext/gtest/CMakeLists.txt
