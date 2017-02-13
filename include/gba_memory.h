@@ -36,9 +36,11 @@ struct gba_memory {
   char* OAM;
   char* PalleteRAM;
   char* gamePakROM;
+  // this is here for now, however, it is likely this will
+  // be somewhere in memory and will be phased out
   int lastBiosOpcode;
 };
 
-char readMemory8bits(int addr);
-short readMemory16bits(int addr);
-int readMemory32bits(int addr);
+char readMemory8bits(int addr, gba_memory* memory);
+short readMemory16bits(int addr, gba_memory* memory);
+int readMemory32bits(int addr, gba_memory* memory);
